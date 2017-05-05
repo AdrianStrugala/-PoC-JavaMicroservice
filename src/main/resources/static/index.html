@@ -1,0 +1,234 @@
+<!doctype html>
+<html ng-app="product">
+<link rel="stylesheet" href="myStyle.css">
+<head>
+<title>Produkty</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<script src="productsDemo.js"></script>
+
+</head>
+<body>
+
+
+<style type="text/css">
+.main-inner .widget ul li{
+  border:none; /*na wszelki wypadek, ¿eby nie pojawi³y siê przypadkowe kreski miêdzy linkami*/
+  }
+/* G £ Ó W N E   M E N U */
+ul#to li a {
+  display: block; /*¿eby wyœwietla³o siê w postaci "bloków"*/
+  background: red; /*kolor t³a g³ównego menu*/
+  color: white; /*kolor czcionki*/
+  padding:7px; /*¿eby linki nie przylega³y tak bardzo do ramek*/
+  margin-bottom:-12px; /*¿eby linki nie by³y tak daleko od siebie*/
+  transition:all 1.0s; /*¿eby p³ynnie przechodzi³o*/
+  -moz-transition:all 1.0s; 
+  -webkit-transition:all 1.0s; 
+  -o-transition:all 1.0s
+
+  /*tutaj mo¿na dodaæ CSS odpowiedzialny za wygl¹d g³ównego menu, np. kolor t³a, czcionki itp.*/
+  }
+  
+ul#to, ul#to li, ul#to ul { 
+  list-style: none; /*usuniêcie kropek w liœcie*/
+  }
+  
+ul#to li { 
+  float: left; 
+  position: relative; 
+  width: 180px; /*szerokoœæ menu*/
+  }
+  
+ul#to li.iehover { 
+  z-index: 5; /*¿eby dzia³a³o poprawnie w IE*/ 
+  }
+  
+ul#to ul { 
+  display: none; 
+  position: absolute; 
+  bot: 100%; /*¿eby rozwija³o siê na tej samej wysokoœci, co poprzedni link*/
+  left: 0; /*right-menu rozwija siê po lewej stronie, left-menu rozwija siê po prawej stronie*/
+  z-index: 5; 
+  }
+  
+/*  R O Z W I N I Ê C I E */
+ul#to ul a { 
+  padding: 7px; /*¿eby linki nie przylega³y tak bardzo do ramek*/
+  display: block; 
+  transition:all 1.0s; /*¿eby p³ynnie przechodzi³o*/
+  -moz-transition:all 1.0s; 
+  -webkit-transition:all 1.0s; 
+  -o-transition:all 1.0s
+  /*tutaj mo¿na dodaæ CSS odpowiedzialny za wygl¹d rozwiniêtej czêœci menu, np. kolor t³a, cienie itp.*/
+  }
+  
+/* R O Z W I N I Ê C I E   P O   N A J E C H A N I U   K U R S O R E M*/
+ul#to a:hover,ul#to li:hover a,ul#to li.iehover a { 
+  transition:all 1.0s; /*¿eby p³ynnie przechodzi³o*/
+  -moz-transition:all 1.0s; 
+  -webkit-transition:all 1.0s; 
+  -o-transition:all 1.0s 
+  /*tutaj mo¿na dodaæ CSS odpowiedzialny za wygl¹d rozwiniêtej czêœci menu po najechaniu myszk¹, np. kolor t³a, cienie itp.*/
+  }
+  
+/* W A ¯ N E   R Z E C Z Y */
+ul#to li:hover ul ul,ul#to li:hover ul ul ul,ul#to li.iehover ul ul,ul#to li.iehover ul ul ul { 
+  display: none; 
+  }
+  
+ul#to li:hover ul,ul#to ul li:hover ul,ul#to ul ul li:hover ul,ul#to li.iehover ul,ul#to ul li.iehover ul,ul#to ul ul li.iehover ul { 
+  display: block; 
+  }
+</style>
+
+
+<div style="height:80px;">
+
+<div style="width:38%; float:left; height:80px; border:1px solid black; background:red; color: black; font: normal normal 25px Verdana, Geneva, sans-serif;">
+<center>AWESOME GAME SHOP</center>
+</div>
+
+
+
+<div style="width:28%; float:left; height:40px; border:1px solid black; background:white">
+<center>SEARCH</center>
+</div>
+
+
+
+<div style="width:17%; float:right; height:50px; border:1px solid black; background:red; color: black">
+<center>LOGIN/REGISTER</center>
+</div>
+
+<div style="width:11%; float:right;  height:50px; border:1px solid black; background:red; color: black">
+<center>BASKET</center>
+</div>
+<div style="height: 80px;"></div>
+</div>
+
+<center>
+<ul id="to">
+<li><a href="#">RPG</a>
+	<div ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: RPG">{{ product.productName}}</li>
+		</ul>
+	</div>  
+<li></li>
+
+<li><a href="#">FPS</a>
+	<div ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: FPS">{{ product.productName}}</li>
+		</ul>
+	</div>  
+<li></li>
+
+<li><a href="#">STRATEGY</a>
+	<div ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: STRATEGY">{{ product.productName}}</li>
+		</ul>
+	</div>  
+<li></li>
+
+<li><a href="#">SPORT</a>
+	<div ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: SPORT">{{ product.productName}}</li>
+		</ul>
+	</div>  
+<li></li>
+
+<li><a href="#">ADVENTURE</a>
+	<div ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: ADVENTURE">{{ product.productName}}</li>
+		</ul>
+	</div>  
+<li></li>
+
+<li><a href="#">OTHER</a>
+	<div ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: OTHER">{{ product.productName}}</li>
+		</ul>
+	</div>  
+<li></li>
+
+
+ </ul>
+ </center>
+ 
+ 
+ <!-- 
+ <div style="height:20px;"></div>
+ <div>
+ <ul>
+	<div style="width:15%; float:left;" ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: RPG">{{ product.productName}}</li>
+		</ul>
+	</div>  
+
+
+	<div style="width:15%; float:left;" ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: FPS">{{ product.productName}}</li>
+		</ul>
+	</div>  
+
+
+	<div style="width:15%; float:left;" ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: STRATEGY">{{ product.productName}}</li>
+		</ul>
+	</div>  
+
+
+	<div style="width:15%; float:left;" ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: SPORT">{{ product.productName}}</li>
+		</ul>
+	</div>  
+
+
+	<div style="width:15%; float:left;" ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: ADVENTURE">{{ product.productName}}</li>
+		</ul>
+	</div>  
+
+	<div style="width:15%; float:left;" ng-controller="Products">
+		<ul>
+			  <li ng-repeat="product in products|filter: OTHER">{{ product.productName}}</li>
+		</ul>
+	</div>  
+
+ </ul>
+
+</div>
+ -->
+
+ 
+<div style="height:100px;"></div>
+ 
+ 
+<div style="height:300px;"">
+
+<div style="width:50%; float:left; height:100%; border:1px solid black; background:red; color: black;">
+<center> news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news news </center>
+</div>
+
+
+<div style="width:40%; float:right;  height:100%;">
+<center><a href="https://smash-fanart.blogspot.com/"><img height="300" src="https://lh3.googleusercontent.com/ivpbzvfCniUN_Lmf-SlRkdDIfDyU7QbzMGknkv0byyx0lUIY2IdgTlXysd21ByntiEUwKkO0JTFyAK-SSWchkddVU2a4avIycdMPrfLtOl3zqdYFBm91Ob-aLnQhcWA2LhC_oTrWyVRm4zzP0nIi-i6kYmCKl151FCjO8IRg0tuV-0MB5j9ulR_C0HVuDPKwAAZnaIl03KPfeeSEXsjVJgpQWJueUFxs3lBPvVQUxpbtiEedrWUpdUS35nZ0hekV-Zf8SVBvVIDwV6kd3IYQwm5cUImMsqGqPCXQYUk1TMp2pOXZeqlEzPS1ceigAJgM42oN0C-ozV2wyv_7QPyhw1Tx1414k4HP83DGfCVFMGPYZwnS63rMY_4FD2t6aL-nx64Hx6bsnIYPIhGXeCItKN1r6wiKdBuFESSRmTjUvEdga7vQi4YVgc4UlQql6tpbPFhxbwuQ8POpr40jbX119ue0n9KwJT42RiqzeLjLmhN4205TJL7TOVr2AcbMEqPZWZg3TJ0a7gN265wJNuymV_lC88mzmxsniSSL3k1u3lyDUBgOOCrJt3ga6QPU073h6dd4mINBEm_iWOvra6RWIFBPoj5_2biu3GE8Rgahg-NapitReUY=w681-h963-no" width="212" /></a></center>
+</div>
+<div style="height: 80px;"></div>
+</div>
+ 
+ 
+ 
+ </font>
+</body>
+</html>

@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+li {
+    background-color: black;
+}
+
+body {
+font: normal normal 14px Verdana, Geneva, sans-serif;
+color: #c9c9c9;
+background: #000000 url(//2.bp.blogspot.com/-KM8la5NTKs8/WChtLB__5lI/AAAAAAAAAkY/SPrUL4ludUgYyxz7KAEAnjZfPn4paRYIwCK4B/s0/t%25C5%2582o.jpg) repeat scroll top center;
+padding: 0 40px 40px 40px;
+}
