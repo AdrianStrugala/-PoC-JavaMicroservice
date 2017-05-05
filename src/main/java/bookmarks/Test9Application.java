@@ -122,13 +122,13 @@ class ProductRestController {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "product/{productId}")
-	Optional<Product> readProduct(@PathVariable Long productId) {
-		
-		log("Product no. " + productId);
-		
-		return this.productRepository.findOne(productId);
-	}
+//	@RequestMapping(method = RequestMethod.GET, value = "product/{productId}")
+//	Optional<Product> readProduct(@PathVariable Long productId) {
+//		
+//		log("Product no. " + productId);
+//		
+//		return this.productRepository.findOne(productId);
+//	}
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
